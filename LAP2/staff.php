@@ -1,3 +1,5 @@
+/* The class `staff` extends the `character` class and represents a staff member with properties such
+as staff code and part. */
 <?php
 require_once("character.php");
 

@@ -1,11 +1,13 @@
+/* This is an HTML document with embedded PHP code. The PHP code is used to create objects of classes
+`member` and `staff` and then display their information on the webpage. */
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>PHP Object Oriented Programming</title>
-<!-- Unicode Vietnamese -->
+//* Unicode Vietnamese 
 <meta charset="utf-8">
 <meta name="author" content="HuynhThaiHung.com" />
-<!-- css definition file -->
+//*css definition file 
 <link href="style.css" rel="stylesheet" />
 </head>
 
@@ -14,16 +16,16 @@
 <div class="row">
 <?php
 require_once("thanhvien.php");
-// Tạo đối tượng member
+//* create object member
 $sv = new member("Nguyen Van A", "email1@gmail.com");
-// In thông tin của đối tượng member
+//* print information
 echo "<h2>-- Member information --</h2>";
 echo "Code: ".$sv -> get_id()."<br/>";
 echo "Fullname: ".$sv -> get_fullname()."<br/>";
 echo "Email: ".$sv -> get_email()."<br/>";
 ?>
 <?php
-// Tạo đối tượng member khác
+//* Tạo đối tượng member khác
 $sv2 = new member("Tran Van B", "email2@gmail.com");
 echo "<h2>---More information--</h2>";
 echo "Code: ".$sv2 -> get_id()."<br/>";
@@ -31,7 +33,7 @@ echo "Fullname: ".$sv2 -> get_fullname()."<br/>";
 echo "Email: ".$sv2 -> get_email()."<br/>";
 ?>
 <?php
-// Include file staff.php
+//* Include file staff.php
 include("staff.php");
 // Tạo đối tượng character
 $character = new character("Nguyen Van A", 5678);
@@ -40,7 +42,7 @@ echo "Full name: ".$character -> get_fullname()."<br/>";
 echo "Country code: ".$character -> get_countrycode()."<br/>";
 ?>
 <?php
-// Tạo đối tượng staff
+//*  create a ob ject staff
 $staff = new staff("Nguyen Van B", 1234, "Guard");
 echo "<h2>---Staff--</h2>";
 echo "Id Staff: ".$staff -> getStaffCode() ."<br/>";

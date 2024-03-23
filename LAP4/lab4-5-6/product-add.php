@@ -1,15 +1,17 @@
+/* This PHP code snippet is for adding a new product to a database. Here's a breakdown of what the code
+does: */
 <?php
 require_once("entities/product.class.php");
 require_once('entities/category.class.php');
 if (isset($_POST["btnsubmit"])) {
-    //Get value from form
+    //* Get value from form
     $productName = $_POST["txtname"];
     $cateID = $_POST["txtcateid"];
     $price = $_POST["txtprice"];
     $quantity = $_POST["txtquantity"];
     $description = $_POST["txtdesc"];
     $picture = $_FILES["txtpic"];
-    //Initialize the product object
+    //* Initialize the product object
     $newProduct = new Product(
         $productName,
         $cateID,
@@ -21,10 +23,10 @@ if (isset($_POST["btnsubmit"])) {
     $loi = array();
     $loi_str = "";
 
-    // Save to the database
+    //* Save to the database
     $result = $newProduct->save($loi);
     if (!$result) {
-        //Error query
+        //? Error query
         header("Location: product-add.php?status=failure");
     } else {
         header("Location: product-add.php?status=inserted");
@@ -59,7 +61,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Description -->
+    //* Product Description 
     <div class="row">
         <div class="lbltitle">
             <label> Product Description </label>
@@ -69,7 +71,7 @@ if (isset($_GET["status"])) {
                                                                             ?>"></textarea>
         </div>
     </div>
-    <!-- The number of products -->
+    //* The number of products 
     <div class="row">
         <div class="lbltitle">
             <label> The number of products </label>
@@ -81,7 +83,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product price -->
+    //* Product price 
     <div class="row">
         <div class="lbltitle">
             <label> Product price </label>
@@ -93,7 +95,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Type -->
+    //* Product Type 
     <div class="row">
         <div class="lbltitle">
             <label> Product Type </label>
@@ -116,7 +118,7 @@ if (isset($_GET["status"])) {
 
         </div>
     </div>
-    <!-- Product Type -->
+    //* Product Type 
     <div class="row">
         <div class="lbltitle">
             <label>Url Image</label>
@@ -135,5 +137,5 @@ if (isset($_GET["status"])) {
     </div>
 </form>
 
-<!-- Footer -->
+//* Footer 
 <?php require 'footer.php'; ?>

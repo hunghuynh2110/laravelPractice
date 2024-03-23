@@ -1,7 +1,9 @@
+/* The provided code snippet is an HTML document structure. It defines the basic structure of an HTML
+page with specific elements and metadata. Here's a breakdown of what each part does: */
 <?php
 include_once("header.php");
 ?>
-<!-- lab 4 là 4,5,6 -->
+
 <ul>
     <li>
         <a href="product-list.php">List of products</a>
